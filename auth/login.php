@@ -5,7 +5,7 @@ include "../connect.php";
 $email = filterRequest("email");
 $password = filterRequest("password");
 
-$stmt = $con->prepare("SELECT * FROM users WHERE `username` = ? AND `email` = ? ");
+$stmt = $con->prepare("SELECT * FROM users WHERE `password` = ? AND email = ? ");
 $stmt->execute(array( $password , $email));
 
 $count = $stmt->rowCount();
