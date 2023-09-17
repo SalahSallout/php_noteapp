@@ -7,7 +7,7 @@ $userid = filterRequest("id");
 $stmt = $con->prepare("SELECT * FROM notes WHERE `notes_users` = ?  ");
 $stmt->execute(array($userid));
 
-$data = $stmt->fetch(PDO::FETCH_ASSOC);
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $count = $stmt->rowCount();
 
